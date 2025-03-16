@@ -2,7 +2,7 @@
     "manufacturer": "Dwctor",
     "keyboard_name": "kaly/kaly42",
     "maintainer": "Dwctor",
-    "development_board": "blackpill_f401",
+    "development_board": "blackpill_f411",
     "features": {
         "bootmagic": true,
         "extrakey": true,
