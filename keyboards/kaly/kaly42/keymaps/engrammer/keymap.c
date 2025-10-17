@@ -54,7 +54,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 #define HOME_0 RCTL_T(KC_0)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-	[0] = LAYOUT_split_3x6_3(KC_NO, KC_B, KC_Y, KC_O, KC_U, KC_NO,        KC_SCLN, KC_L, KC_D, KC_W, KC_V, RCS_T(KC_5),
+	[0] = LAYOUT_split_3x6_3(KC_NO, KC_B, KC_Y, KC_O, KC_U, KC_NO,        KC_SCLN, KC_L, KC_D, KC_W, KC_V, TO(5),
                           KC_NO, HOME_C, HOME_I, HOME_E, HOME_A, KC_Z,        KC_Q, HOME_H, HOME_T, HOME_S, HOME_N, MOD_MEH,
                              QK_LLCK, KC_G, KC_X, KC_J, KC_K, KC_NO,        KC_SLSH, KC_R, KC_M, KC_F, KC_P, QK_LLCK,
                          LT(3, KC_ESC), LT(1, KC_SPC), MO(2),               MO(1), MO(2), MO(3)),
@@ -66,13 +66,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [2] = LAYOUT_split_3x6_3(KC_NO, LALT(KC_UP), KC_HOME, KC_UP, KC_END, KC_PGUP,      KC_NO, RALT(KC_ENT), RALT(KC_TAB), RALT(KC_DEL), RALT(KC_BSPC), KC_NO,
                           KC_NO, LALT(KC_DOWN), KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,    KC_NO, KC_ENT, KC_TAB, KC_DEL, KC_BSPC, KC_NO,
-                               KC_TRANSPARENT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,      KC_NO, RSFT(KC_ENT), RSFT(KC_TAB), RSFT(KC_DEL), RSFT(KC_BSPC), KC_TRANSPARENT,
+                               KC_TRANSPARENT, KC_NO, SELWBAK, SELLINE, SELWORD, KC_NO,      KC_NO, RSFT(KC_ENT), RSFT(KC_TAB), RSFT(KC_DEL), RSFT(KC_BSPC), KC_TRANSPARENT,
                                       TO(0), KC_TRANSPARENT, QK_LLCK,                    KC_TRANSPARENT, KC_NO, KC_TRANSPARENT),
 
     [3] = LAYOUT_split_3x6_3(KC_NO, KC_LCBR, KC_UNDS, KC_LPRN, KC_SCLN, KC_NO,         KC_NO, KC_COLN, KC_RPRN, KC_EXLM, KC_RCBR, KC_NO,
                              KC_NO, KC_PIPE, KC_EQL, KC_TILD, KC_PLUS, KC_NO,          KC_NO, KC_CIRC, KC_AMPR, KC_PERC, KC_ASTR, KC_NO,
                              KC_TRANSPARENT, KC_NO, KC_NO, KC_GRV, KC_LT, KC_NO,       KC_NO, KC_GT, KC_DLR, KC_NO, KC_BSLS, KC_TRANSPARENT,
-                             TO(0), KC_TRANSPARENT, QK_LLCK,                             KC_TRANSPARENT, KC_TRANSPARENT, KC_NO)
+                             TO(0), KC_TRANSPARENT, QK_LLCK,                             KC_TRANSPARENT, KC_TRANSPARENT, KC_NO),
+
+    [4] = LAYOUT_split_3x6_3(KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,          OM_W_U, OM_BTNS, OM_U, OM_DBLS, KC_NO, KC_NO,
+                             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,          OM_W_D, OM_L, OM_D, OM_R, OM_SLOW, KC_NO,
+                             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,          OM_RELS, OM_HLDS, OM_SEL1, OM_SEL2, OM_SEL3, KC_NO,
+                             TO(0), KC_NO, KC_NO,                               KC_NO, KC_NO, KC_NO),
+
+    [5] = LAYOUT_split_3x6_3(KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,          OM_W_U, OM_BTNS, MS_UP, OM_DBLS, KC_NO, KC_NO,
+                             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,          OM_W_D, MS_LEFT, MS_DOWN, MS_RGHT, OM_SLOW, KC_NO,
+                             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,          OM_RELS, OM_HLDS, OM_SEL1, OM_SEL2, OM_SEL3, KC_NO,
+                             TO(0), KC_NO, KC_NO,                               KC_NO, KC_NO, KC_NO)
 };
 
 #if defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
