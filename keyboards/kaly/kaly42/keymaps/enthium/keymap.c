@@ -1,6 +1,8 @@
 #include QMK_KEYBOARD_H
 // #include "features/layer_lock.h"
 
+enum kaly_layers { _BASE, _NUM, _NAV, _SYM };
+
 // enum custom_keycodes {
 //     QK_LLCK = SAFE_RANGE,
 //     // Other custom keys...
@@ -68,11 +70,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                   └───┤NAV│   │NUM├───┘
       *                       └───┘   └───┘
       */
-    [0] = LAYOUT_split_3x6_3(
-        KC_NO,   KC_Z,     KC_Y,     KC_U,          KC_O,          KC_SEMICOLON, KC_Q,  KC_L,        KC_D,   KC_P,   KC_X,   TO(5),
-        KC_W,    HOME_C,   HOME_I,   HOME_E,        HOME_A,        KC_COMMA,     KC_K,  HOME_H,      HOME_T, HOME_N, HOME_S, KC_F,
-        QK_LLCK, KC_QUOTE, KC_MINUS, KC_EQUAL,      KC_DOT,        KC_SLASH,     KC_J,  KC_M,        KC_G,   KC_B,   KC_V,   QK_LLCK,
-                                     LT(3, KC_ESC), LT(1, KC_SPC), MO(2),        MO(1), LT(2, KC_R), MO(3)
+    [_BASE] = LAYOUT_split_3x6_3(
+        KC_NO,   KC_Z,     KC_Y,     KC_U,             KC_O,             KC_SEMICOLON, KC_Q,     KC_L,           KC_D,    KC_P,   KC_X,   TO(5),
+        KC_W,    HOME_C,   HOME_I,   HOME_E,           HOME_A,           KC_COMMA,     KC_K,     HOME_H,         HOME_T,  HOME_N, HOME_S, KC_F,
+        QK_LLCK, KC_QUOTE, KC_MINUS, KC_EQUAL,         KC_DOT,           KC_SLASH,     KC_J,     KC_M,           KC_G,    KC_B,   KC_V,   QK_LLCK,
+                                     LT(_SYM, KC_ESC), LT(_NUM, KC_SPC), MO(_NAV),     MO(_NUM), LT(_NAV, KC_R), MO(_SYM)
     ),
 
      /*
@@ -89,11 +91,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                   └───┤NAV│   │NUM├───┘
       *                       └───┘   └───┘
       */
-    [1] = LAYOUT_split_3x6_3(
-        KC_NO,          KC_LBRC, KC_MINS, KC_QUOT, KC_COMM,        KC_NO,   KC_NO,          KC_DOT,         KC_DQT,        KC_QUES, KC_RBRC, KC_NO,
-        KC_NO,          HOME_1,  HOME_2,  HOME_3,  HOME_4,         KC_NO,   KC_NO,          HOME_7,         HOME_8,        HOME_9,  HOME_0,  KC_NO,
-        KC_TRANSPARENT, KC_NO,   KC_NO,   KC_AT,   KC_5,           KC_NO,   KC_NO,          KC_6,           KC_HASH,       KC_NO,   KC_SLSH, KC_TRANSPARENT,
-                                          TO(0),   KC_TRANSPARENT, QK_LLCK, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
+    [_NUM] = LAYOUT_split_3x6_3(
+        KC_NO,          KC_LBRC, KC_MINS, KC_QUOT,   KC_COMM,        KC_NO,   KC_NO,          KC_DOT,         KC_DQT,        KC_QUES, KC_RBRC, KC_NO,
+        KC_NO,          HOME_1,  HOME_2,  HOME_3,    HOME_4,         KC_NO,   KC_NO,          HOME_7,         HOME_8,        HOME_9,  HOME_0,  KC_NO,
+        KC_TRANSPARENT, KC_NO,   KC_NO,   KC_AT,     KC_5,           KC_NO,   KC_NO,          KC_6,           KC_HASH,       KC_NO,   KC_SLSH, KC_TRANSPARENT,
+                                          TO(_BASE), KC_TRANSPARENT, QK_LLCK, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
     ),
 
 
@@ -111,11 +113,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                   └───┤NAV│   │NUM├───┘
       *                       └───┘   └───┘
       */
-    [2] = LAYOUT_split_3x6_3(
-        KC_NO,          LALT(KC_UP),   KC_HOME, KC_UP,   KC_END,         KC_PGUP, KC_NO,          RALT(KC_ENT), RALT(KC_TAB),  RALT(KC_DEL), RALT(KC_BSPC), KC_NO,
-        KC_NO,          LALT(KC_DOWN), KC_LEFT, KC_DOWN, KC_RGHT,        KC_PGDN, KC_NO,          KC_ENT,       KC_TAB,        KC_DEL,       KC_BSPC,       KC_NO,
-        KC_TRANSPARENT, KC_NO,         SELWBAK, SELLINE, SELWORD,        KC_NO,   KC_NO,          RSFT(KC_ENT), RSFT(KC_TAB),  RSFT(KC_DEL), RSFT(KC_BSPC), KC_TRANSPARENT,
-                                                TO(0),   KC_TRANSPARENT, QK_LLCK, KC_TRANSPARENT, KC_NO,        KC_TRANSPARENT
+    [_NAV] = LAYOUT_split_3x6_3(
+        KC_NO,          LALT(KC_UP),   KC_HOME, KC_UP,     KC_END,         KC_PGUP, KC_NO,          RALT(KC_ENT), RALT(KC_TAB),  RALT(KC_DEL), RALT(KC_BSPC), KC_NO,
+        KC_NO,          LALT(KC_DOWN), KC_LEFT, KC_DOWN,   KC_RGHT,        KC_PGDN, KC_NO,          KC_ENT,       KC_TAB,        KC_DEL,       KC_BSPC,       KC_NO,
+        KC_TRANSPARENT, KC_NO,         SELWBAK, SELLINE,   SELWORD,        KC_NO,   KC_NO,          RSFT(KC_ENT), RSFT(KC_TAB),  RSFT(KC_DEL), RSFT(KC_BSPC), KC_TRANSPARENT,
+                                                TO(_BASE), KC_TRANSPARENT, QK_LLCK, KC_TRANSPARENT, KC_NO,        KC_TRANSPARENT
     ),
 
      /*
@@ -132,25 +134,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                   └───┤   │   │   ├───┘
       *                       └───┘   └───┘
       */
-    [3] = LAYOUT_split_3x6_3(
-        KC_NO,          KC_LCBR, KC_UNDS, KC_LPRN, KC_SCLN,        KC_NO,   KC_NO,          KC_COLN,        KC_RPRN, KC_EXLM, KC_RCBR, KC_NO,
-        KC_NO,          KC_PIPE, KC_EQL,  KC_TILD, KC_PLUS,        KC_NO,   KC_NO,          KC_CIRC,        KC_AMPR, KC_PERC, KC_ASTR, KC_NO,
-        KC_TRANSPARENT, KC_NO,   KC_NO,   KC_GRV,  KC_LT,          KC_NO,   KC_NO,          KC_GT,          KC_DLR,  KC_NO,   KC_BSLS, KC_TRANSPARENT,
-                                          TO(0),   KC_TRANSPARENT, QK_LLCK, KC_TRANSPARENT, KC_TRANSPARENT, KC_NO
+    [_SYM] = LAYOUT_split_3x6_3(
+        KC_NO,          KC_LCBR, KC_UNDS, KC_LPRN,   KC_SCLN,        KC_NO,   KC_NO,          KC_COLN,        KC_RPRN, KC_EXLM, KC_RCBR, KC_NO,
+        KC_NO,          KC_PIPE, KC_EQL,  KC_TILD,   KC_PLUS,        KC_NO,   KC_NO,          KC_CIRC,        KC_AMPR, KC_PERC, KC_ASTR, KC_NO,
+        KC_TRANSPARENT, KC_NO,   KC_NO,   KC_GRV,    KC_LT,          KC_NO,   KC_NO,          KC_GT,          KC_DLR,  KC_NO,   KC_BSLS, KC_TRANSPARENT,
+                                          TO(_BASE), KC_TRANSPARENT, QK_LLCK, KC_TRANSPARENT, KC_TRANSPARENT, KC_NO
     ),
 
     [4] = LAYOUT_split_3x6_3(
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, OM_W_U,  OM_BTNS, OM_U,    OM_DBLS, KC_NO,   KC_NO,
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, OM_W_D,  OM_L,    OM_D,    OM_R,    OM_SLOW, KC_NO,
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, OM_RELS, OM_HLDS, OM_SEL1, OM_SEL2, OM_SEL3, KC_NO,
-                             TO(0), KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO
+        KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO, OM_W_U,  OM_BTNS, OM_U,    OM_DBLS, KC_NO,   KC_NO,
+        KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO, OM_W_D,  OM_L,    OM_D,    OM_R,    OM_SLOW, KC_NO,
+        KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO, OM_RELS, OM_HLDS, OM_SEL1, OM_SEL2, OM_SEL3, KC_NO,
+                             TO(_BASE), KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO
     ),
 
     [5] = LAYOUT_split_3x6_3(
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, OM_W_U,  OM_BTNS, MS_UP,   OM_DBLS, KC_NO,   KC_NO,
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, OM_W_D,  MS_LEFT, MS_DOWN, MS_RGHT, OM_SLOW, KC_NO,
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, OM_RELS, OM_HLDS, OM_SEL1, OM_SEL2, OM_SEL3, KC_NO,
-                             TO(0), KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO
+        KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO, OM_W_U,  OM_BTNS, MS_UP,   OM_DBLS, KC_NO,   KC_NO,
+        KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO, OM_W_D,  MS_LEFT, MS_DOWN, MS_RGHT, OM_SLOW, KC_NO,
+        KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO, OM_RELS, OM_HLDS, OM_SEL1, OM_SEL2, OM_SEL3, KC_NO,
+                             TO(_BASE), KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO
     )
 
      /*
