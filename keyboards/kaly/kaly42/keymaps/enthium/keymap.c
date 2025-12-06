@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 // #include "features/layer_lock.h"
 
-enum kaly_layers { _BASE, _NUM, _NAV, _SYM };
+enum kaly_layers { _BASE, _NUM, _NAV, _SYM, _MOUSE };
 
 // enum custom_keycodes {
 //     QK_LLCK = SAFE_RANGE,
@@ -71,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                       └───┘   └───┘
       */
     [_BASE] = LAYOUT_split_3x6_3(
-        KC_NO,   KC_Z,     KC_Y,     KC_O,             KC_U,             KC_EQL,       KC_Q,     KC_L,           KC_D,    KC_P,   KC_X,   TO(5),
+        KC_NO,   KC_Z,     KC_Y,     KC_O,             KC_U,             KC_EQL,       KC_Q,     KC_L,           KC_D,    KC_P,   KC_X,   TO(_MOUSE),
         KC_W,    HOME_C,   HOME_I,   HOME_A,           HOME_E,           KC_SEMICOLON, KC_K,     HOME_H,         HOME_T,  HOME_N, HOME_S, KC_F,
         QK_LLCK, KC_QUOTE, KC_MINUS, KC_COMMA,         KC_DOT,           KC_SLASH,     KC_J,     KC_M,           KC_G,    KC_B,   KC_V,   QK_LLCK,
                                      LT(_SYM, KC_ESC), LT(_NUM, KC_SPC), MO(_NAV),     MO(_NUM), LT(_NAV, KC_R), MO(_SYM)
@@ -140,18 +140,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                 TO(_BASE), KC_TRANSPARENT, QK_LLCK, KC_TRANSPARENT, KC_NO,        KC_TRANSPARENT
     ),
 
-    [4] = LAYOUT_split_3x6_3(
-        KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO, OM_W_U,  OM_BTNS, OM_U,    OM_DBLS, KC_NO,   KC_NO,
-        KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO, OM_W_D,  OM_L,    OM_D,    OM_R,    OM_SLOW, KC_NO,
-        KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO, OM_RELS, OM_HLDS, OM_SEL1, OM_SEL2, OM_SEL3, KC_NO,
-                             TO(_BASE), KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO
-    ),
-
-    [5] = LAYOUT_split_3x6_3(
-        KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO, OM_W_U,  OM_BTNS, MS_UP,   OM_DBLS, KC_NO,   KC_NO,
-        KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO, OM_W_D,  MS_LEFT, MS_DOWN, MS_RGHT, OM_SLOW, KC_NO,
-        KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO, OM_RELS, OM_HLDS, OM_SEL1, OM_SEL2, OM_SEL3, KC_NO,
-                             TO(_BASE), KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO
+    [_MOUSE] = LAYOUT_split_3x6_3(
+        KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO,   KC_NO, MS_WHLU, MS_BTN1, MS_UP,   MS_BTN2, KC_NO, KC_NO,
+        KC_NO, KC_NO, KC_NO, MS_BTN1,   MS_BTN2, KC_NO, MS_WHLD, MS_LEFT, MS_DOWN, MS_RGHT, KC_NO, KC_NO,
+        KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO,   KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO,
+                             TO(_BASE), KC_NO,   KC_NO, KC_NO,   KC_NO,   KC_NO
     )
 
      /*
