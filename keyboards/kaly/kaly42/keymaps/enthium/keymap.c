@@ -1,6 +1,9 @@
 #include QMK_KEYBOARD_H
 // #include "features/layer_lock.h"
 
+// https://github.com/sunaku/enthium
+// https://cyanophage.github.io/playground.html?layout=wyou%3Dqldbf%5Cciae-khtnsv%27%2C.%3B%2Fjmgpx*rz&mode=ergo&lan=english&thumb=r
+
 enum kaly_layers { _BASE, _NUM, _NAV, _SYM, _MOUSE };
 
 // enum custom_keycodes {

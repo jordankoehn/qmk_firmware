@@ -1,6 +1,8 @@
 #include QMK_KEYBOARD_H
 // #include "features/layer_lock.h"
+
 // https://www.reddit.com/r/KeyboardLayouts/comments/1pgtt3x/valmak_one_month_into_a_colemakenthium_hybrid/
+// https://cyanophage.github.io/playground.html?layout=jyou%3Dzpfmx%5Chiae-gtsnlq%27%2C.%3B%2Fvdcbw*rk&mode=ergo&lan=english&thumb=r
 
 enum kaly_layers { _BASE, _NUM, _NAV, _SYM, _MOUSE };
 
@@ -59,11 +61,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /*
       * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
-      * │   │ J │ Y │ O │ U │ = │       │ Z │ P │ F │ M │ W │   │
+      * │   │ J │ Y │ O │ U │ = │       │ Z │ P │ F │ M │ X │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
       * │ K │ H │ I │ A │ E │ - │       │ G │ T │ S │ N │ L │ Q │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │   │ ' │ , │ . │ ; │ / │       │ V │ D │ C │ B │ X │   │
+      * │   │ ' │ , │ . │ ; │ / │       │ V │ D │ C │ B │ W │   │
       * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
       *               ┌───┐                   ┌───┐
       *               │SYM├───┐           ┌───┤SYM│
