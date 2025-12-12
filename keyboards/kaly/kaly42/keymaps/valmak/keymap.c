@@ -72,17 +72,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                       └───┘   └───┘
       */
     [_BASE] = LAYOUT_split_3x6_3(
-        KC_NO,   KC_J,     KC_Y,     KC_O,             KC_U,             KC_EQL,   KC_Z,     KC_P,           KC_F,    KC_M,   KC_W,   TO(_MOUSE),
+        KC_NO,   KC_J,     KC_Y,     KC_O,             KC_U,             KC_EQL,   KC_Z,     KC_P,           KC_F,    KC_M,   KC_X,   TO(_MOUSE),
         KC_K,    HOME_H,   HOME_I,   HOME_A,           HOME_E,           KC_MINUS, KC_G,     HOME_T,         HOME_S,  HOME_N, HOME_L, KC_Q,
-        QK_LLCK, KC_QUOTE, KC_COMMA, KC_DOT,           KC_SEMICOLON,     KC_SLASH, KC_V,     KC_D,           KC_C,    KC_B,   KC_X,   QK_LLCK,
+        QK_LLCK, KC_QUOTE, KC_COMMA, KC_DOT,           KC_SEMICOLON,     KC_SLASH, KC_V,     KC_D,           KC_C,    KC_B,   KC_W,   QK_LLCK,
                                      LT(_SYM, KC_ESC), LT(_NUM, KC_SPC), MO(_NAV), MO(_NUM), LT(_NAV, KC_R), MO(_SYM)
     ),
 
      /*
       * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
-      * │   │   │ 3 │ 2 │ 1 │ ! │       │   │ { │ } │ ` │   │   │
+      * │   │   │ 3 │ 2 │ 1 │   │       │   │ { │ } │ ` │   │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │ \ │ 0 │ 6 │ 5 │ 4 │   │       │   │ ( │ ) │ : │ # │   │
+      * │ \ │ 0 │ 6 │ 5 │ 4 │ ! │       │   │ ( │ ) │ : │ # │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
       * │   │   │ 9 │ 8 │ 7 │   │       │   │ [ │ ] │   │   │   │
       * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
@@ -93,17 +93,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                       └───┘   └───┘
       */
     [_NUM] = LAYOUT_split_3x6_3(
-        KC_NO,          KC_NO, KC_3, KC_2,      KC_1,           KC_EXLM, KC_NO,          KC_LCBR,        KC_RCBR,       KC_GRV,  KC_NO,   KC_NO,
-        KC_BSLS,        KC_0,  KC_6, KC_5,      KC_4,           KC_NO,   KC_NO,          KC_LPRN,        KC_RPRN,       KC_COLN, KC_HASH, KC_NO,
+        KC_NO,          KC_NO, KC_3, KC_2,      KC_1,           KC_NO,   KC_NO,          KC_LCBR,        KC_RCBR,       KC_GRV,  KC_NO,   KC_NO,
+        KC_BSLS,        KC_0,  KC_6, KC_5,      KC_4,           KC_EXLM, KC_NO,          KC_LPRN,        KC_RPRN,       KC_COLN, KC_HASH, KC_NO,
         KC_TRANSPARENT, KC_NO, KC_9, KC_8,      KC_7,           KC_NO,   KC_NO,          KC_LBRC,        KC_RBRC,       KC_NO,   KC_NO,   KC_TRANSPARENT,
                                      TO(_BASE), KC_TRANSPARENT, QK_LLCK, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
     ),
 
      /*
       * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
-      * │   │   │ ~ │ = │ | │ ! │       │   │ { │ } │ ` │   │   │
+      * │   │   │ ~ │ = │ | │   │       │   │ { │ } │ ` │   │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │ \ │ * │ @ │ $ │ + │   │       │   │ ( │ ) │ : │ # │   │
+      * │ \ │ * │ @ │ $ │ + │ ! │       │   │ ( │ ) │ : │ # │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
       * │   │   │ % │ & │ ^ │   │       │   │ [ │ ] │   │   │   │
       * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
@@ -114,8 +114,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                       └───┘   └───┘
       */
     [_SYM] = LAYOUT_split_3x6_3(
-        KC_NO,          KC_NO,   KC_TILD, KC_EQL,    KC_PIPE,        KC_EXLM, KC_NO,          KC_LCBR,        KC_RCBR, KC_GRV,  KC_NO,   KC_NO,
-        KC_BSLS,        KC_ASTR, KC_AT,   KC_DLR,    KC_PLUS,        KC_NO,   KC_NO,          KC_LPRN,        KC_RPRN, KC_COLN, KC_HASH, KC_NO,
+        KC_NO,          KC_NO,   KC_TILD, KC_EQL,    KC_PIPE,        KC_NO,   KC_NO,          KC_LCBR,        KC_RCBR, KC_GRV,  KC_NO,   KC_NO,
+        KC_BSLS,        KC_ASTR, KC_AT,   KC_DLR,    KC_PLUS,        KC_EXLM, KC_NO,          KC_LPRN,        KC_RPRN, KC_COLN, KC_HASH, KC_NO,
         KC_TRANSPARENT, KC_NO,   KC_PERC, KC_AMPR,   KC_CIRC,        KC_NO,   KC_NO,          KC_LBRC,        KC_RBRC, KC_NO,   KC_NO,   KC_TRANSPARENT,
                                           TO(_BASE), KC_TRANSPARENT, QK_LLCK, KC_TRANSPARENT, KC_TRANSPARENT, KC_NO
     ),
