@@ -2,7 +2,7 @@
 // #include "features/layer_lock.h"
 
 // Based on https://github.com/sunaku/enthium, colmak, and valmak
-// https://cyanophage.github.io/playground.html?layout=jyou%3Dzgmpx%5Chiae-ftsnlq%27%2C.%3B%2Fvdcbw*rk&mode=ergo&lan=english&thumb=r
+// https://cyanophage.github.io/playground.html?layout=jyou%3Dzmgpx%5Chiae-ftsnlq%27%2C.%3B%2Fvdcbw*rk&mode=ergo&lan=english&thumb=r
 
 enum kaly_layers { _BASE, _NUM, _NAV, _SYM, _MOUSE };
 
@@ -61,7 +61,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /*
       * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
-      * │   │ J │ Y │ O │ U │ = │       │ Z │ G │ M │ P │ X │   │
+      * │   │ J │ Y │ O │ U │ = │       │ Z │ M │ G │ P │ X │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
       * │ K │ H │ I │ A │ E │ - │       │ F │ T │ S │ N │ L │ Q │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
@@ -74,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                       └───┘   └───┘
       */
     [_BASE] = LAYOUT_split_3x6_3(
-        KC_NO,   KC_J,     KC_Y,     KC_O,             KC_U,             KC_EQL,   KC_Z,     KC_G,           KC_M,    KC_P,   KC_X,   TO(_MOUSE),
+        KC_NO,   KC_J,     KC_Y,     KC_O,             KC_U,             KC_EQL,   KC_Z,     KC_M,           KC_G,    KC_P,   KC_X,   TO(_MOUSE),
         KC_K,    HOME_H,   HOME_I,   HOME_A,           HOME_E,           KC_MINUS, KC_F,     HOME_T,         HOME_S,  HOME_N, HOME_L, KC_Q,
         QK_LLCK, KC_QUOTE, KC_COMMA, KC_DOT,           KC_SEMICOLON,     KC_SLASH, KC_V,     KC_D,           KC_C,    KC_B,   KC_W,   QK_LLCK,
                                      LT(_SYM, KC_ESC), LT(_NUM, KC_SPC), MO(_NAV), MO(_NUM), LT(_NAV, KC_R), MO(_SYM)
