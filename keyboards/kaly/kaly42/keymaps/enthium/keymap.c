@@ -2,7 +2,7 @@
 // #include "features/layer_lock.h"
 
 // https://github.com/sunaku/enthium
-// https://cyanophage.github.io/playground.html?layout=wyou%3Dqldbf%5Cciae-khtnsv%27%2C.%3B%2Fjmgpx*rz&mode=ergo&lan=english&thumb=r
+// https://cyanophage.github.io/playground.html?layout=jyou%3Dzldpx%5Cciae-fhtnsq%27%2C.%3B%2Fvmgbw*rk&mode=ergo&lan=english&thumb=r
 
 enum kaly_layers { _BASE, _NUM, _NAV, _SYM, _MOUSE };
 
@@ -61,11 +61,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /*
       * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
-      * │   │ W │ Y │ O │ U │ = │       │ Q │ L │ D │ P │ X │   │
+      * │   │ J │ Y │ O │ U │ = │       │ Z │ L │ D │ P │ X │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │ Z │ C │ I │ A │ E │ - │       │ K │ H │ T │ N │ S │ V │
+      * │ K │ C │ I │ A │ E │ - │       │ F │ H │ T │ N │ S │ Q │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │   │ ' │ , │ . │ ; │ / │       │ J │ M │ G │ B │ F │   │
+      * │   │ ' │ , │ . │ ; │ / │       │ V │ M │ G │ B │ W │   │
       * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
       *               ┌───┐                   ┌───┐
       *               │SYM├───┐           ┌───┤SYM│
@@ -74,9 +74,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                       └───┘   └───┘
       */
     [_BASE] = LAYOUT_split_3x6_3(
-        KC_NO,   KC_W,     KC_Y,     KC_O,             KC_U,             KC_EQL,   KC_Q,     KC_L,           KC_D,    KC_B,   KC_F,   TO(_MOUSE),
-        KC_Z,    HOME_C,   HOME_I,   HOME_A,           HOME_E,           KC_MINUS, KC_K,     HOME_H,         HOME_T,  HOME_N, HOME_S, KC_V,
-        QK_LLCK, KC_QUOTE, KC_COMMA, KC_DOT,           KC_SEMICOLON,     KC_SLASH, KC_J,     KC_M,           KC_G,    KC_P,   KC_X,   QK_LLCK,
+        KC_NO,   KC_J,     KC_Y,     KC_O,             KC_U,             KC_EQL,   KC_Z,     KC_L,           KC_D,    KC_P,   KC_X,   TO(_MOUSE),
+        KC_K,    HOME_C,   HOME_I,   HOME_A,           HOME_E,           KC_MINUS, KC_F,     HOME_H,         HOME_T,  HOME_N, HOME_S, KC_Q,
+        QK_LLCK, KC_QUOTE, KC_COMMA, KC_DOT,           KC_SEMICOLON,     KC_SLASH, KC_V,     KC_M,           KC_G,    KC_B,   KC_W,   QK_LLCK,
                                      LT(_SYM, KC_ESC), LT(_NUM, KC_SPC), MO(_NAV), MO(_NUM), LT(_NAV, KC_R), MO(_SYM)
     ),
 
