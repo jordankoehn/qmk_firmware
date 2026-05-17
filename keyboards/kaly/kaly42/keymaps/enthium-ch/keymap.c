@@ -82,9 +82,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
      /*
       * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
-      * │   │   │ 3 │ 2 │ 1 │   │       │   │ { │ } │ ` │   │   │
+      * │   │   │ 3 │ 2 │ 1 │   │       │   │ { │ } │ ` │PST│   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │ \ │ 0 │ 6 │ 5 │ 4 │ ! │       │   │ ( │ ) │ : │ # │   │
+      * │ \ │ 0 │ 6 │ 5 │ 4 │ ! │       │CPY│ ( │ ) │ : │ # │CUT│
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
       * │   │ J │ 9 │ 8 │ 7 │ K │       │   │ [ │ ] │   │   │   │
       * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
@@ -95,9 +95,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                       └───┘   └───┘
       */
     [_NUM] = LAYOUT_split_3x6_3(
-        KC_NO,          KC_NO, KC_3, KC_2,      KC_1,           KC_NO,   KC_NO,          KC_LCBR,        KC_RCBR,       KC_GRV,  KC_NO,   KC_NO,
-        KC_BSLS,        KC_0,  KC_6, KC_5,      KC_4,           KC_EXLM, KC_NO,          KC_LPRN,        KC_RPRN,       KC_COLN, KC_HASH, KC_NO,
-        KC_TRANSPARENT, KC_J,  KC_9, KC_8,      KC_7,           KC_K,    KC_NO,          KC_LBRC,        KC_RBRC,       KC_NO,   KC_NO,   KC_TRANSPARENT,
+        KC_NO,          KC_NO, KC_3, KC_2,      KC_1,           KC_NO,   KC_NO,   KC_LCBR,        KC_RCBR,       KC_GRV,  LSFT(KC_INS),   KC_NO,
+        KC_BSLS,        KC_0,  KC_6, KC_5,      KC_4,           KC_EXLM, LCTL(KC_INS),   KC_LPRN,        KC_RPRN,       KC_COLN, KC_HASH, LSFT(KC_DEL),
+        KC_TRANSPARENT, KC_J,  KC_9, KC_8,      KC_7,           KC_K,    KC_NO,   KC_LBRC,        KC_RBRC,       KC_NO,   KC_NO,   KC_TRANSPARENT,
                                      TO(_BASE), KC_TRANSPARENT, QK_LLCK, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
     ),
 
