@@ -29,9 +29,66 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
                 return false; // Skip default handling.
             }
-            break;
+        case KC_C: // We intercept the standard 'C' key
+            if (record->event.pressed) {
+                // Check if specifically Left GUI is held
+                if (get_mods() & MOD_BIT(KC_LGUI)) {
 
-            // Other macros...
+                    // 1. Specifically remove Left GUI from the current report
+                    del_mods(MOD_BIT(KC_LGUI));
+
+                    // 2. Send Ctrl + Insert
+                    register_code(KC_LCTL);
+                    register_code(KC_INS);
+                    unregister_code(KC_INS);
+                    unregister_code(KC_LCTL);
+
+                    // 3. Restore only Left GUI
+                    add_mods(MOD_BIT(KC_LGUI));
+
+                    return false; // Intercepted: Don't send the original 'C'
+                }
+            }
+        case KC_V: // We intercept the standard 'V' key
+            if (record->event.pressed) {
+                // Check if specifically Left GUI is held
+                if (get_mods() & MOD_BIT(KC_LGUI)) {
+
+                    // 1. Specifically remove Left GUI from the current report
+                    del_mods(MOD_BIT(KC_LGUI));
+
+                    // 2. Send Shift + Insert
+                    register_code(KC_LSFT);
+                    register_code(KC_INS);
+                    unregister_code(KC_INS);
+                    unregister_code(KC_LSFT);
+
+                    // 3. Restore only Left GUI
+                    add_mods(MOD_BIT(KC_LGUI));
+
+                    return false; // Intercepted: Don't send the original 'V'
+                }
+            }
+        case KC_X: // We intercept the standard 'X' key
+            if (record->event.pressed) {
+                // Check if specifically Left GUI is held
+                if (get_mods() & MOD_BIT(KC_LGUI)) {
+
+                    // 1. Specifically remove Left GUI from the current report
+                    del_mods(MOD_BIT(KC_LGUI));
+
+                    // 2. Send Ctrl + X
+                    register_code(KC_LCTL);
+                    register_code(KC_X);
+                    unregister_code(KC_X);
+                    unregister_code(KC_LCTL);
+
+                    // 3. Restore only Left GUI
+                    add_mods(MOD_BIT(KC_LGUI));
+
+                    return false; // Intercepted: Don't send the original 'X'
+                }
+            }
     }
     return true; // Continue default handling.
 }
