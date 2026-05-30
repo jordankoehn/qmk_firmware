@@ -105,7 +105,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // #define HOME_4 LSFT_T(KC_4)
 
 // Right-hand home row mods
-#define HOME_T LSFT_T(KC_T)
+#define HOME_T RSFT_T(KC_T)
 #define HOME_S LGUI_T(KC_S)
 #define HOME_N LALT_T(KC_N)
 #define HOME_L LCTL_T(KC_L)
